@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">H5_d1_DekleratifResourceKullanimi</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    
+    <string name="str">Android</string>
+
+    <string-array name="arr">
+
+        <item>OS2</item>
+        <item>AS 400</item>
+        <item>Pardus</item>
+        <item>RTOS</item>
+
+    </string-array>
+
+
+</resources>

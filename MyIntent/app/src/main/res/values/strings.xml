@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MyIntent</string>
+
+    <string name="button_red">Red Pill</string>
+    <string name="button_blue">Blue Pill</string>
+    <string name="title_activity_second">SecondActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+
+</resources>

@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fileNameSave"
+        android:layout_marginTop="45dp"
+        android:hint="enter file name"
+        android:layout_below="@+id/textView"
+        android:layout_toEndOf="@+id/fileContent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="File Name"
+        android:id="@+id/fileName"
+        android:layout_alignTop="@+id/fileNameSave"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Content of File"
+        android:id="@+id/fileContent"
+        android:layout_below="@+id/buttonRead"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="52dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fileContentSave"
+        android:hint="Enter text to save in file"
+        android:layout_marginTop="28dp"
+        android:layout_below="@+id/fileNameSave"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/buttonRead" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/buttonSave"
+        android:layout_alignTop="@+id/fileNameSave"
+        android:layout_alignParentEnd="true"
+        android:onClick="saveFile" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Read"
+        android:id="@+id/buttonRead"
+        android:layout_alignTop="@+id/fileContentSave"
+        android:layout_alignStart="@+id/buttonSave"
+        android:onClick="readFile" />
+
+</RelativeLayout>
