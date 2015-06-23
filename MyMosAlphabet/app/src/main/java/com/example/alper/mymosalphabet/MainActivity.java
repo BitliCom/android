@@ -1,6 +1,8 @@
 package com.example.alper.mymosalphabet;
 
+import android.app.Activity;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.hardware.Camera;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -9,14 +11,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 
 public class MainActivity extends ActionBarActivity {
 
     public PlayFlash flsh;
+    EditText txt;
+    TextView txt2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,20 +53,33 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void Yayinla(View vw) {
-        EditText txt = ((EditText) findViewById(R.id.mosText));
+        txt = ((EditText) findViewById(R.id.mosText));
         String str = txt.getText().toString();
-
         MorsFnc(str);
     }
 
     public void MorsFnc(String str) {
+//        txt2 = ((TextView) findViewById(R.id.textView2));
         MorsHarf mrs = new MorsHarf();
-        ArrayList lst = mrs.parseMors(str);
-        Log.e("ALPER", str);
-        flsh = new PlayFlash(this.getBaseContext(), lst);
-        Thread t = new Thread(flsh);
-        t.start();
 
+//        ArrayList ls = mrs.parseMors(str);
+//        Iterator itr = ls.iterator();
+
+        ArrayList lst = mrs.parseMors(str);
+//        int idx = 0;
+//        String tmp;
+//        while (itr.hasNext()) {
+//            idx++;
+//            txt2.setTextColor(Color.RED);
+//            tmp = str.substring(0, idx);
+//            txt2.setText(tmp,TextView.BufferType.EDITABLE);
+
+//            lst.add(itr.next());
+            flsh = new PlayFlash(this.getBaseContext(), lst);
+            Thread t = new Thread(flsh);
+            t.start();
+
+//        }
     }
 
 }

@@ -2,9 +2,13 @@ package com.example.alper.mymosalphabet;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.hardware.Camera;
+import android.view.LayoutInflater;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
-
+import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -30,6 +34,10 @@ public class PlayFlash implements Runnable {
         this.cam = cam;
     }
 
+    int t = 0, slepTm = 0, smallGap = 200, bigGap = 500;
+
+    int Mors_BOS = -1;
+    int Mors_NOKTA= -2;
     Camera cam;
     Context ctx;
     Camera.Parameters p;
@@ -88,19 +96,23 @@ public class PlayFlash implements Runnable {
     public void run() {
         Iterator itr = playTime.iterator();
         initCam();
-        int t = 0, slepTm = 0;
         while (itr.hasNext()) {
             try {
                 int[] tyr = (int[]) itr.next();
                 t = 0;
                 while (t < tyr.length) {
-                    initCamOn();
-                    cam.startPreview();
                     slepTm = tyr[t];
-                    Thread.sleep(slepTm);
-                    initCamOff();
-                    cam.stopPreview();
-                    Thread.sleep(10);
+                    if (slepTm > 0) {
+                        initCamOn();
+                        cam.startPreview();
+                        Thread.sleep(slepTm);
+                        initCamOff();
+                        cam.stopPreview();
+                        Thread.sleep(smallGap);
+                    } else if (slepTm == Mors_BOS)
+                        Thread.sleep(bigGap);
+                    else if (slepTm == Mors_NOKTA)
+                        Thread.sleep(smallGap);
                     t++;
                 }
             } catch (InterruptedException e) {
@@ -112,6 +124,13 @@ public class PlayFlash implements Runnable {
                 cam.setParameters(p);
                 cam.stopPreview();
 
+            }
+            try {
+                Thread.sleep(bigGap);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                Toast.makeText(ctx, e.getMessage(),
+                        Toast.LENGTH_SHORT).show();
             }
         }
         cam.release();
