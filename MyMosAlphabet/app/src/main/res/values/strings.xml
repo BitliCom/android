@@ -2,9 +2,12 @@
     <string name="app_name">MyMosAlphabet</string>
 
     <string name="hello_world">Mos Yayınlayıcı</string>
-    <string name="action_settings">Settings</string>
     <string name="permlab_flashlight">Flash Lambası</string>
     <string name="permdesc_flashlight">Flash Lambası Açıklama</string>
+
+    <string name="flash_settings"> Flash Settings</string>
+    <string name="App_Code_PAge">App Code Page</string>
+    <string name="Mors_Alphabet">Mors Alphabet</string>
 
 
 </resources>

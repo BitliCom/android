@@ -1,6 +1,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+    <item
+        android:id="@+id/FlashSettings"
+        android:title="@string/flash_settings"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:onClick="ViewSettings" />
+
+    <item
+        android:id="@+id/MorsAlphabet"
+        android:title="@string/Mors_Alphabet"
+        android:orderInCategory="101"
+        app:showAsAction="never"
+        android:onClick="ViewMors" />
+
+    <item
+        android:id="@+id/CodePage"
+        android:title="@string/App_Code_PAge"
+        android:orderInCategory="102"
+        app:showAsAction="never"
+        android:onClick="ViewCodePage" />
+
 </menu>

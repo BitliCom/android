@@ -1,6 +1,7 @@
 package com.example.alper.mymosalphabet;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.hardware.Camera;
@@ -45,9 +46,10 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.FlashSettings) {
             return true;
         }
+
 
         return super.onOptionsItemSelected(item);
     }
@@ -82,4 +84,15 @@ public class MainActivity extends ActionBarActivity {
 //        }
     }
 
+    public void ViewSettings(MenuItem item) {
+
+    }
+
+    public void ViewCodePage(MenuItem item) {
+
+    }
+
+    public void ViewMors(MenuItem item) {
+
+    }
 }
